@@ -2,9 +2,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Proprietary blobs
-$(call inherit-product-if-exists, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/universal9830-common/universal9830-common-vendor.mk)
 
-COMMON_PATH := device/samsung/sm8250-common
+COMMON_PATH := device/samsung/universal9830-common
 TARGET_COPY_OUT_VENDOR_OVERLAY ?= $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)
 
 # Soong Namespaces
@@ -27,12 +27,11 @@ PRODUCT_PACKAGES += \
 
 # Init Resources
 PRODUCT_PACKAGES += \
-    init.qcom.rc \
-    fstab.qcom
+    fstab.exynos990
 
 # Recovery
 PRODUCT_PACKAGES += \
-    init.recovery.qcom.rc \
+    init.recovery.exynos990.rc \
     fastbootd
 
 # Skip Mount
@@ -49,7 +48,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung-sm8250
+    android.hardware.biometrics.fingerprint@2.1-service.samsung-universal9830
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -63,14 +62,14 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.samsung-sm8250
+    android.hardware.power@1.3-service.samsung-universal9830
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/powerhint.json
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung-sm8250
+    android.hardware.sensors@1.0-impl.samsung-universal9830
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
@@ -103,5 +102,5 @@ PRODUCT_COPY_FILES += \
 
 # Lineage
 ifneq ($(LINEAGE_BUILD),)
--include $(COMMON_PATH)/sm8250_lineage.mk
+-include $(COMMON_PATH)/universal9830_lineage.mk
 endif
