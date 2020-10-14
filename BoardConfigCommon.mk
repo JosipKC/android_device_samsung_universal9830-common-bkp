@@ -61,9 +61,9 @@ BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 8320446464
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 	system \
-￼	vendor \
-￼	product \
-￼	odm
+	vendor \
+	product \
+	odm
 
 # File System
 TARGET_COPY_OUT_VENDOR := vendor
