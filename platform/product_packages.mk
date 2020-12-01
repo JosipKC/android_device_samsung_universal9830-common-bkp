@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 
 ### USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.exynos9611
+    android.hardware.usb@1.1-service.exynos990
 
 ### USB TRUST HAL
 PRODUCT_PACKAGES += \
